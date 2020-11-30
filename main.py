@@ -1,5 +1,9 @@
+import os
 import discord
 from discord.ext import commands
+from dotenv import load_dotenv
+
+load_dotenv()
 
 bot = commands.Bot(command_prefix='>', description="Este es un bot de prueba")
 
@@ -25,4 +29,4 @@ async def on_ready():
     print('Mi bot esta listo')
 
 
-bot.run('NzgwODAwNTc3ODUxODgzNTQy.X70XNA.AC3eDeEROLOBDMUUel5T8bmcN2U')
+bot.run(os.getenv('DISCORD_TOKEN'))
